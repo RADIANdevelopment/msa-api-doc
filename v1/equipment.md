@@ -35,8 +35,15 @@ equipment.js
 [
     {
         "_id": "5ef2eb1a43950514f0a0ed71",
-        "operation": [
-            "5cbc398f5e42968e114d6319"
+        "operation":  [
+            {
+                "status":  true,
+                "o_id": "5f7475ca762cd264ad20bc3e"
+            },
+			{
+                "status":  false,
+                "o_id": "5f7475ca762cd264ad20bc4e"
+            }
         ],
         "eg_id": "5ef272da1e1bf14780be699e",
         "name": "Раскройный ленточная машина  KAIGU 1200",
