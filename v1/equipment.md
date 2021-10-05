@@ -38,11 +38,13 @@ equipment.js
         "operation":  [
             {
                 "status":  true,
-                "o_id": "5f7475ca762cd264ad20bc3e"
+                "o_id": "5f7475ca762cd264ad20bc3e",
+				"name": "Пошив"
             },
 			{
                 "status":  false,
-                "o_id": "5f7475ca762cd264ad20bc4e"
+                "o_id": "5f7475ca762cd264ad20bc4e",
+                "name": "Стежка"
             }
         ],
         "g_id": "5ef272da1e1bf14780be699e",
