@@ -3,7 +3,7 @@
 # Система сотрудника
 worker_sys.js
 <br>
-Дизайн: https://xd.adobe.com/view/cca15b9e-7559-4c9d-8981-33d1e19e0f58-99f2/
+Дизайн: https://xd.adobe.com/view/cca15b9e-7559-4c9d-8981-33d1e19e0f58-99f2/flow
 
 <br>
 
