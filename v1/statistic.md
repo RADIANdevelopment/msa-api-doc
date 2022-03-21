@@ -224,3 +224,33 @@ statistic.js
 Параметры:<br>
 **start_date*** - Стартовая дата, от которой собираем статистику (например: '2019-08-01')<br>
 **finish_date*** - Финальная дата, до которой собираем статистику (например: '2019-09-01')<br>
+
+<br>
+
+### Статистика по использованным материалов для заказа
+
+Для получения статистики по отработанному рабочему времени **`GET`** запрос на **`/material_count/:_id`**<br>
+
+Пример ответа:<br>
+```
+[
+    {
+        "value": "-20",
+        "material": "Fabrics.Eco-leather black.ecol001.amount"
+    },
+    {
+        "value": "-20",
+        "material": "Fabrics.Jacquard black.jac001.amount"
+    },
+    {
+        "value": "-20",
+        "material": "Fabrics.Arigon black.arig001.amount"
+    },
+    {
+        "value": "+1",
+        "material": "Finished products.Сar covers"
+    }
+]
+```
+Параметры:<br>
+**_id*** - Идентификатор заказа<br>
