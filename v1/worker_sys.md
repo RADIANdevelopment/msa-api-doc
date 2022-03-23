@@ -212,6 +212,38 @@ worker_sys.js
 
 <br>
 
+### Получение технических карт для операции
+
+Для получения технических карт для операции необходимо отправить **`GET`** запрос на **`/order_worker_techmap/:_id`**<br>
+
+Пример ответа:<br>
+```
+[
+    {
+        "_id": "6178503ecb30bb6aa7dc2020",
+        "technical_maps": [
+            {
+                "name": "Tech map",
+                "file_name": "car_cover.jpg",
+                "file_url": "https://firebasestorage.googleapis.com/v0/b/msa-cloud.appspot.com/o/car_cover.jpg?alt=media&token=a6d2825e-1a6f-4217-b340-9d126bdc0e9b",
+                "upload": true
+            },
+            {
+                "name": "Tech map",
+                "file_name": "car_cover 2.jpg",
+                "file_url": "https://firebasestorage.googleapis.com/v0/b/msa-cloud.appspot.com/o/car_cover%202.jpg?alt=media&token=75a7b848-b346-4d78-aa15-b74edb27f30c",
+                "upload": true
+            }
+        ]
+    }
+]
+```
+
+Параметры:<br>
+**_id*** - id операции<br>
+
+<br>
+
 ### Создаём новое сообщение
 
 Для получения списка сообщений необходимо отправить **`GET`** запрос на **`/api/order_worker_new_message`**<br>
