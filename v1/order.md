@@ -1324,119 +1324,127 @@ order.js
 ```
 [
     {
-        "_id": "623ae55025750a623d9f78d5",
-        "stream": [
-            {
-                "operation": {
-                    "position": [
-                        0,
-                        2
-                    ],
-                    "relation": [
+        "operation": {
+            "position": [
+                0,
+                2
+            ],
+            "relation": [
+                {
+                    "_id": "61c9e39e0c58e255f70ee215",
+                    "firstPointIndex": 1,
+                    "secondPointIndex": 3,
+                    "so_id": "61c9e2e28452b203173288d9",
+                    "startId": "61c9db4470fd4c52dd5f0910",
+                    "result": "start proizvodnji polizdelkov",
+                    "bgr_color": "#007AFC",
+                    "function": []
+                }
+            ],
+            "_id": "61c9db4470fd4c52dd5f0910",
+            "type": "order",
+            "status": "active"
+        }
+    },
+    {
+        "operation": {
+            "position": [
+                2,
+                2
+            ],
+            "type": "operation",
+            "relation": [
+                {
+                    "_id": "61ca1719d33d245dbba23f93",
+                    "firstPointIndex": 1,
+                    "secondPointIndex": 3,
+                    "so_id": "61ca162d0c22d87d1b0f7d20",
+                    "startId": "61c9dd30da1e897c2cf615e2",
+                    "result": "Sestavljanje je zaključeno",
+                    "bgr_color": "#F5982D",
+                    "function": [
                         {
-                            "_id": "61c9e39e0c58e255f70ee215",
-                            "firstPointIndex": 1,
-                            "secondPointIndex": 3,
-                            "so_id": "61c9e2e28452b203173288d9",
-                            "startId": "61c9db4470fd4c52dd5f0910",
-                            "result": "start proizvodnji polizdelkov",
-                            "bgr_color": "#007AFC",
-                            "function": []
-                        }
-                    ],
-                    "_id": "61c9db4470fd4c52dd5f0910",
-                    "type": "order",
-                    "status": "active"
-                }
-            },
-            {
-                "operation": {
-                    "position": [
-                        2,
-                        2
-                    ],
-                    "type": "operation",
-                    "relation": [
+                            "_id": "61ca1719d33d245dbba23f97",
+                            "type": "material",
+                            "condition": "minus",
+                            "value": 10,
+                            "path": "Polizdelki.sp uležajenje SL"
+                        },
                         {
-                            "_id": "61ca1719d33d245dbba23f93",
-                            "firstPointIndex": 1,
-                            "secondPointIndex": 3,
-                            "so_id": "61ca162d0c22d87d1b0f7d20",
-                            "startId": "61c9dd30da1e897c2cf615e2",
-                            "result": "Sestavljanje je zaključeno",
-                            "bgr_color": "#F5982D",
-                            "function": [
-                                {
-                                    "_id": "61ca1719d33d245dbba23f97",
-                                    "type": "material",
-                                    "condition": "minus",
-                                    "value": 10,
-                                    "path": "Polizdelki.sp uležajenje SL"
-                                }
-                            ]
+                            "_id": "61ca1719d33d245dbba23f96",
+                            "type": "material",
+                            "condition": "minus",
+                            "value": 10,
+                            "path": "Polizdelki.zg uležajenje"
                         }
-                    ],
-                    "_id": "61c9dd30da1e897c2cf615e2",
-                    "o_id": "61c9dd240c58e255f70ee18d",
-                    "so_status": {
-                        "status": "active"
-                    }
+                    ]
                 }
-            },
-            {
-                "operation": {
-                    "position": [
-                        1,
-                        2
-                    ],
-                    "type": "operation",
-                    "relation": [
-                        {
-                            "_id": "61c9e39e0c58e255f70ee20b",
-                            "firstPointIndex": 1,
-                            "secondPointIndex": 3,
-                            "so_id": "61c9dd30da1e897c2cf615e2",
-                            "startId": "61c9e2e28452b203173288d9",
-                            "result": "Polizdelki so narejeni",
-                            "bgr_color": "#2EA877",
-                            "function": [
-                                {
-                                    "_id": "61c9e39e0c58e255f70ee20e",
-                                    "type": "material",
-                                    "condition": "plus",
-                                    "value": 10,
-                                    "path": "Polizdelki.sp uležajenje SL"
-                                },
-                                {
-                                    "_id": "61c9e39e0c58e255f70ee20d",
-                                    "type": "material",
-                                    "condition": "plus",
-                                    "value": 10,
-                                    "path": "Polizdelki.zg uležajenje"
-                                }
-                            ]
-                        }
-                    ],
-                    "_id": "61c9e2e28452b203173288d9",
-                    "o_id": "61c9e2cb0c58e255f70ee1e9",
-                    "so_status": {
-                        "status": "complete"
-                    }
-                }
-            },
-            {
-                "operation": {
-                    "position": [
-                        3,
-                        2
-                    ],
-                    "type": "order",
-                    "relation": [],
-                    "_id": "61ca162d0c22d87d1b0f7d20",
-                    "status": "complete"
-                }
+            ],
+            "_id": "61c9dd30da1e897c2cf615e2",
+            "o_id": "61c9dd240c58e255f70ee18d",
+            "so_status": {
+                "status": "active"
             }
-        ]
+        },
+        "operation_name": "Sestavljanje",
+        "worker_name": "zaposleni 3",
+        "w_id": "61a51de117c2887ade9105f2"
+    },
+    {
+        "operation": {
+            "position": [
+                1,
+                2
+            ],
+            "type": "operation",
+            "relation": [
+                {
+                    "_id": "61c9e39e0c58e255f70ee20b",
+                    "firstPointIndex": 1,
+                    "secondPointIndex": 3,
+                    "so_id": "61c9dd30da1e897c2cf615e2",
+                    "startId": "61c9e2e28452b203173288d9",
+                    "result": "Polizdelki so narejeni",
+                    "bgr_color": "#2EA877",
+                    "function": [
+                        {
+                            "_id": "61c9e39e0c58e255f70ee20e",
+                            "type": "material",
+                            "condition": "plus",
+                            "value": 10,
+                            "path": "Polizdelki.sp uležajenje SL"
+                        },
+                        {
+                            "_id": "61c9e39e0c58e255f70ee20d",
+                            "type": "material",
+                            "condition": "plus",
+                            "value": 10,
+                            "path": "Polizdelki.zg uležajenje"
+                        }
+                    ]
+                }
+            ],
+            "_id": "61c9e2e28452b203173288d9",
+            "o_id": "61c9e2cb0c58e255f70ee1e9",
+            "so_status": {
+                "status": "complete"
+            }
+        },
+        "operation_name": "Proizvodnja polizdelkov",
+        "worker_name": "zaposleni 2",
+        "w_id": "61a51dd117c2887ade9105f0"
+    },
+    {
+        "operation": {
+            "position": [
+                3,
+                2
+            ],
+            "type": "order",
+            "relation": [],
+            "_id": "61ca162d0c22d87d1b0f7d20",
+            "status": "complete"
+        }
     }
 ]
 ```
