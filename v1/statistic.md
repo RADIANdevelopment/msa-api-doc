@@ -254,3 +254,38 @@ statistic.js
 ```
 Параметры:<br>
 **_id*** - Идентификатор заказа<br>
+
+<br>
+
+### Статистика по использованным материалов для запланированных товаров
+
+Для получения статистики по использованным материалов для запланированных товаров **`GET`** запрос на **`/material_planning/:start_date/:finish_date`**<br>
+
+Пример ответа:<br>
+```
+[
+    {
+        "count": 600,
+        "path": "Paint.Paint",
+        "cond": "minus"
+    },
+    {
+        "count": 60,
+        "path": "Machined wheels.Machined wheel",
+        "cond": "minus"
+    },
+    {
+        "count": 60,
+        "path": "Wheels ready for shipping.Ready wheel",
+        "cond": "plus"
+    },
+    {
+        "count": 60,
+        "path": "Machined wheels.Machined wheel",
+        "cond": "plus"
+    }
+]
+```
+Параметры:<br>
+**start_date*** - Стартовая дата, от которой собираем статистику (например: '2022-01-26T00:00:00')<br>
+**finish_date*** - Финальная дата, до которой собираем статистику (например: '2022-01-26T23:59:59')<br>
