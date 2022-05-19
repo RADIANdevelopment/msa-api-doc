@@ -228,3 +228,178 @@ planning.js
 Ответ:<br> коды состояний 204 или 404.
 
 <br>
+
+### Получение последовательности операций для заказа
+
+Для получения последовательности операций для заказа необходимо отправить **`GET`** запрос на **`/api/order_operations/:_id`**<br>
+
+Пример ответа:<br>
+```
+[
+    {
+        "_id": "62722d5453a18d6600067bfb",
+        "operation": {
+            "_id": "625c661fd286c349c9ea64ed",
+            "g_id": "6256b3af9be5936347adca37",
+            "name": "Melting and casting (for write-off)",
+            "cost": "20",
+            "sort": [],
+            "description": "Melting and casting",
+            "compliance_rate": "00:10:00"
+        },
+        "materials": [
+            {
+                "condition": "plus",
+                "value": 10,
+                "path": "Rough wheels.Rough wheel",
+                "price": null
+            }
+        ],
+        "equipment": [
+            {
+                "_id": "626152f8abcdd2752d22d733",
+                "g_id": "625b0118d286c349c9ea645b",
+                "name": "Zhenli ZLC-550T",
+                "operation": [
+                    {
+                        "_id": "6262630036cb561e329f668d",
+                        "status": true,
+                        "o_id": "625c661fd286c349c9ea64ed"
+                    }
+                ],
+                "specification": {
+                    "Machine Type": "Cold Chamber Die Casting Machine",
+                    "Core Components": "PLC, Gearbox, Pump",
+                    "Min Thickness of Die Block (mm)": "350 mm"
+                },
+                "occupied": false
+            },
+            {
+                "_id": "6262635036cb561e329f668e",
+                "g_id": "625b0118d286c349c9ea645b",
+                "name": "Zhenli ZLC-1300T",
+                "operation": [
+                    {
+                        "_id": "6262635036cb561e329f668f",
+                        "status": true,
+                        "o_id": "625c661fd286c349c9ea64ed"
+                    }
+                ],
+                "specification": {
+                    "Machine Type": "Cold Chamber Die Casting Machine",
+                    "Core Components": "PLC, Gearbox, Pump",
+                    "Min Thickness of Die Block (mm)": "350 mm"
+                },
+                "occupied": false
+            },
+            {
+                "_id": "6262636836cb561e329f6690",
+                "g_id": "625b0118d286c349c9ea645b",
+                "name": "Zhenli ZLC-1000T",
+                "operation": [
+                    {
+                        "_id": "6262636836cb561e329f6691",
+                        "status": true,
+                        "o_id": "625c661fd286c349c9ea64ed"
+                    }
+                ],
+                "specification": {
+                    "Machine Type": "Cold Chamber Die Casting Machine",
+                    "Core Components": "PLC, Gearbox, Pump",
+                    "Min Thickness of Die Block (mm)": "350 mm"
+                },
+                "occupied": false
+            },
+            {
+                "_id": "6262638736cb561e329f6692",
+                "g_id": "625b0118d286c349c9ea645b",
+                "name": "Zhenli ZLC-450T",
+                "operation": [
+                    {
+                        "_id": "6262638736cb561e329f6693",
+                        "status": true,
+                        "o_id": "625c661fd286c349c9ea64ed"
+                    }
+                ],
+                "specification": {
+                    "Machine Type": "Cold Chamber Die Casting Machine",
+                    "Core Components": "PLC, Gearbox, Pump",
+                    "Min Thickness of Die Block (mm)": "350 mm"
+                },
+                "occupied": false
+            },
+            {
+                "_id": "6262641136cb561e329f6694",
+                "g_id": "625b0118d286c349c9ea645b",
+                "name": "HM15-HM480",
+                "operation": [
+                    {
+                        "_id": "6262641136cb561e329f6695",
+                        "status": true,
+                        "o_id": "625c661fd286c349c9ea64ed"
+                    }
+                ],
+                "specification": {
+                    "Machine Type": "Cold Chamber Die Casting Machine",
+                    "Core Components": "PLC, Gearbox, Pump",
+                    "Min Thickness of Die Block (mm)": "350 mm"
+                },
+                "occupied": false
+            }
+        ]
+    },
+    {
+        "_id": "62722d5453a18d6600067bfb",
+        "operation": {
+            "_id": "625c669ad286c349c9ea64ef",
+            "g_id": "6256b3af9be5936347adca37",
+            "name": "Checking and machining (for write-off)",
+            "cost": "10",
+            "sort": [],
+            "description": "Checking and machining",
+            "compliance_rate": "00:30:00"
+        },
+        "materials": [
+            {
+                "condition": "plus",
+                "value": 10,
+                "path": "Machined wheels.Machined wheel",
+                "price": null
+            },
+            {
+                "condition": "minus",
+                "value": 100,
+                "path": "Paint.Paint",
+                "price": null
+            }
+        ],
+        "equipment": []
+    },
+    {
+        "_id": "62722d5453a18d6600067bfb",
+        "operation": {
+            "_id": "625c665cd286c349c9ea64ee",
+            "g_id": "6256b3af9be5936347adca37",
+            "name": "Painting and packing (for write-off)",
+            "cost": "10",
+            "technical_maps": [],
+            "sort": [],
+            "compliance_rate": "00:20:00"
+        },
+        "materials": [
+            {
+                "condition": "plus",
+                "value": 10,
+                "path": "Wheels ready for shipping.Ready wheel",
+                "price": null
+            }
+        ],
+        "equipment": []
+    }
+]
+```
+
+Параметры:<br>
+**_id*** - Идентификатор планирования<br>
+
+<br>
