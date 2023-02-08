@@ -231,175 +231,546 @@ planning.js
 
 ### Получение последовательности операций для заказа
 
-Для получения последовательности операций для заказа необходимо отправить **`GET`** запрос на **`/api/order_operations/:_id`**<br>
+Для получения последовательности операций для заказа необходимо отправить **`GET`** запрос на **`/api/order_operations_parallel/?_id={"_id": [ "63e2a6c6edd61bbc60779a81", "63e394beedd61bbc60779aad"]}`**<br>
 
 Пример ответа:<br>
 ```
 [
     {
-        "_id": "62722d5453a18d6600067bfb",
-        "operation": {
-            "_id": "625c661fd286c349c9ea64ed",
-            "g_id": "6256b3af9be5936347adca37",
-            "name": "Melting and casting (for write-off)",
-            "cost": "20",
-            "sort": [],
-            "description": "Melting and casting",
-            "compliance_rate": "00:10:00"
+        "_id": "63e2a6c6edd61bbc60779a81",
+        "urgently": false,
+        "g_id": "63e0b34a113123006b9f02bd",
+        "name": "Заказ 020",
+        "type": "simple",
+        "schedule": "2023-03-31T00:00:00.000Z",
+        "streamName": "Параллельные операции",
+        "s_id": "63e292d1edd61bbc60779a7a",
+        "composition": {
+            "Тип продукции": "тип 1",
+            "Диапазон измерения": "от 0,3 до 1 метров ",
+            "Точность измерения": "от ±5 мм",
+            "Дисплей ": "SAP-300",
+            "Выходной сигнал": "4-20 мА ",
+            "Напряжение питания": "18 - 35 В постоянного тока",
+            "Температура продукта измерения": "от -30 °C до +90 °C",
+            "Маржинальнось": "20",
+            "тип": "ААА"
         },
-        "materials": [
+        "sequence_number": 6,
+        "c_id": "000000000000000000000000",
+        "client": "Administrator",
+        "count": null,
+        "status": "pending",
+        "date": "2023-02-07T20:30:00.325Z",
+        "operation": [
             {
-                "condition": "plus",
-                "value": 10,
-                "path": "Rough wheels.Rough wheel",
-                "price": null
-            }
-        ],
-        "equipment": [
-            {
-                "_id": "626152f8abcdd2752d22d733",
-                "g_id": "625b0118d286c349c9ea645b",
-                "name": "Zhenli ZLC-550T",
-                "operation": [
+                "_id": "63aecfe1fe51cf495c2162e1",
+                "g_id": "63e0b1d6c62b0f27175862e3",
+                "name": "Операция 10",
+                "description": "Операция 10",
+                "cost": "20",
+                "compliance_rate": "180000",
+                "resources": [
                     {
-                        "_id": "6262630036cb561e329f668d",
+                        "name": "Resource 1",
                         "status": true,
-                        "o_id": "625c661fd286c349c9ea64ed"
+                        "r_id": "63cedb471efbbaaea5d4b949",
+                        "type": "equipments",
+                        "conditions": [
+                            {
+                                "a_id": "629336eb81cbed3d19940c6b",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 1
+                            },
+                            {
+                                "a_id": "63a9af67fe51cf495c21628d",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Resource 2",
+                        "status": true,
+                        "r_id": "63cedbac04fce7e1243cfb64",
+                        "type": "worker",
+                        "conditions": [
+                            {
+                                "a_id": "6293314681cbed3d19940af3",
+                                "r_index": 1,
+                                "take": 0.5,
+                                "return": 0.5
+                            }
+                        ]
                     }
                 ],
-                "specification": {
-                    "Machine Type": "Cold Chamber Die Casting Machine",
-                    "Core Components": "PLC, Gearbox, Pump",
-                    "Min Thickness of Die Block (mm)": "350 mm"
+                "technical_maps": [],
+                "scripts": {
+                    "order_level": {
+                        "script": ""
+                    },
+                    "operation_level": {
+                        "script": ""
+                    },
+                    "resource_level": {
+                        "script": ""
+                    }
                 },
-                "occupied": false
+                "expects": [
+                    []
+                ]
             },
             {
-                "_id": "6262635036cb561e329f668e",
-                "g_id": "625b0118d286c349c9ea645b",
-                "name": "Zhenli ZLC-1300T",
-                "operation": [
+                "_id": "63aef59ffe51cf495c2162f0",
+                "g_id": "63e0b1d6c62b0f27175862e3",
+                "name": "Операция 12",
+                "description": "Операция 12",
+                "cost": "30",
+                "compliance_rate": "120000",
+                "technical_maps": [],
+                "resources": [
                     {
-                        "_id": "6262635036cb561e329f668f",
+                        "name": "Resource 1",
                         "status": true,
-                        "o_id": "625c661fd286c349c9ea64ed"
+                        "r_id": "63cedb7c4797d40542ce52e4",
+                        "type": "equipments",
+                        "conditions": [
+                            {
+                                "a_id": "629337cd81cbed3d19940c6f",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 1
+                            },
+                            {
+                                "a_id": "62c49c8027765d12f9c70350",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 1
+                            }
+                        ]
                     }
                 ],
-                "specification": {
-                    "Machine Type": "Cold Chamber Die Casting Machine",
-                    "Core Components": "PLC, Gearbox, Pump",
-                    "Min Thickness of Die Block (mm)": "350 mm"
+                "scripts": {
+                    "order_level": {
+                        "script": ""
+                    },
+                    "operation_level": {
+                        "script": ""
+                    },
+                    "resource_level": {
+                        "script": ""
+                    }
                 },
-                "occupied": false
+                "expects": [
+                    [
+                        "63aecfe1fe51cf495c2162e1"
+                    ]
+                ]
             },
             {
-                "_id": "6262636836cb561e329f6690",
-                "g_id": "625b0118d286c349c9ea645b",
-                "name": "Zhenli ZLC-1000T",
-                "operation": [
+                "_id": "63bfebbb91f6cc4f4c4f97b5",
+                "g_id": "63e0b1d6c62b0f27175862e3",
+                "name": "ОТК",
+                "description": "Отдел контроля качества",
+                "cost": "0",
+                "compliance_rate": "120000",
+                "resources": [
                     {
-                        "_id": "6262636836cb561e329f6691",
+                        "name": "Resource 1",
                         "status": true,
-                        "o_id": "625c661fd286c349c9ea64ed"
+                        "r_id": "63bfecae536213fe4a8619ac",
+                        "type": "worker",
+                        "conditions": [
+                            {
+                                "a_id": "62932f1881cbed3d19940aef",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 1
+                            },
+                            {
+                                "a_id": "62c45e5509f2bd0ac40dd7ed",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 1
+                            }
+                        ]
                     }
                 ],
-                "specification": {
-                    "Machine Type": "Cold Chamber Die Casting Machine",
-                    "Core Components": "PLC, Gearbox, Pump",
-                    "Min Thickness of Die Block (mm)": "350 mm"
+                "technical_maps": [],
+                "scripts": {
+                    "order_level": {
+                        "script": ""
+                    },
+                    "operation_level": {
+                        "script": ""
+                    },
+                    "resource_level": {
+                        "script": ""
+                    }
                 },
-                "occupied": false
+                "expects": [
+                    [
+                        "63d269761ba4501b0cf39b84"
+                    ],
+                    [
+                        "63aed7bafe51cf495c2162e2",
+                        "63aef59ffe51cf495c2162f0"
+                    ]
+                ]
             },
             {
-                "_id": "6262638736cb561e329f6692",
-                "g_id": "625b0118d286c349c9ea645b",
-                "name": "Zhenli ZLC-450T",
-                "operation": [
-                    {
-                        "_id": "6262638736cb561e329f6693",
-                        "status": true,
-                        "o_id": "625c661fd286c349c9ea64ed"
+                "_id": "63d269761ba4501b0cf39b84",
+                "g_id": "63e0b1d6c62b0f27175862e3",
+                "name": "Операция 03",
+                "scripts": {
+                    "order_level": {
+                        "script": ""
+                    },
+                    "operation_level": {
+                        "script": ""
+                    },
+                    "resource_level": {
+                        "script": ""
                     }
-                ],
-                "specification": {
-                    "Machine Type": "Cold Chamber Die Casting Machine",
-                    "Core Components": "PLC, Gearbox, Pump",
-                    "Min Thickness of Die Block (mm)": "350 mm"
                 },
-                "occupied": false
+                "description": "",
+                "cost": "0",
+                "compliance_rate": "600000",
+                "technical_maps": [],
+                "expects": [
+                    [
+                        "63aecfe1fe51cf495c2162e1"
+                    ]
+                ]
             },
             {
-                "_id": "6262641136cb561e329f6694",
-                "g_id": "625b0118d286c349c9ea645b",
-                "name": "HM15-HM480",
-                "operation": [
+                "_id": "63aed7bafe51cf495c2162e2",
+                "g_id": "63e0b1d6c62b0f27175862e3",
+                "name": "Операция 11",
+                "description": "Операция 11",
+                "cost": 0,
+                "compliance_rate": "240000",
+                "resources": [
                     {
-                        "_id": "6262641136cb561e329f6695",
+                        "name": "Resource 1",
                         "status": true,
-                        "o_id": "625c661fd286c349c9ea64ed"
+                        "r_id": "63cc2f75f623c96470060d32",
+                        "type": "material",
+                        "conditions": [
+                            {
+                                "a_id": "6297834cd443c8021b14d59d",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 0
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Resource 2",
+                        "status": true,
+                        "r_id": "63d8efd8ebd51f68acfcf4e4",
+                        "type": "equipments",
+                        "conditions": [
+                            {
+                                "a_id": "62c49c8027765d12f9c70350",
+                                "r_index": 1,
+                                "take": 1,
+                                "return": 1
+                            },
+                            {
+                                "a_id": "63aef567fe51cf495c2162ef",
+                                "r_index": 1,
+                                "take": 1,
+                                "return": 1
+                            }
+                        ]
                     }
                 ],
-                "specification": {
-                    "Machine Type": "Cold Chamber Die Casting Machine",
-                    "Core Components": "PLC, Gearbox, Pump",
-                    "Min Thickness of Die Block (mm)": "350 mm"
-                },
-                "occupied": false
+                "technical_maps": [],
+                "scripts": {},
+                "expects": [
+                    [
+                        "63aecfe1fe51cf495c2162e1"
+                    ]
+                ]
             }
         ]
     },
     {
-        "_id": "62722d5453a18d6600067bfb",
-        "operation": {
-            "_id": "625c669ad286c349c9ea64ef",
-            "g_id": "6256b3af9be5936347adca37",
-            "name": "Checking and machining (for write-off)",
-            "cost": "10",
-            "sort": [],
-            "description": "Checking and machining",
-            "compliance_rate": "00:30:00"
+        "_id": "63e394beedd61bbc60779aad",
+        "urgently": false,
+        "g_id": "63e0b34a113123006b9f02bd",
+        "name": "Заказ 021",
+        "type": "simple",
+        "schedule": "2023-03-31T00:00:00.000Z",
+        "streamName": "Параллельные операции",
+        "s_id": "63e292d1edd61bbc60779a7a",
+        "composition": {
+            "Тип продукции": "тип 1",
+            "Диапазон измерения": "от 0,3 до 1 метров ",
+            "Точность измерения": "от ±5 мм",
+            "Дисплей ": "SAP-300",
+            "Выходной сигнал": "4-20 мА ",
+            "Напряжение питания": "18 - 35 В постоянного тока",
+            "Температура продукта измерения": "от -30 °C до +90 °C",
+            "Маржинальнось": "20",
+            "тип": "ААА"
         },
-        "materials": [
+        "sequence_number": 6,
+        "c_id": "000000000000000000000000",
+        "client": "Administrator",
+        "count": null,
+        "status": "pending",
+        "date": "2023-02-08T13:25:34.253Z",
+        "operation": [
             {
-                "condition": "plus",
-                "value": 10,
-                "path": "Machined wheels.Machined wheel",
-                "price": null
+                "_id": "63d269761ba4501b0cf39b84",
+                "g_id": "63e0b1d6c62b0f27175862e3",
+                "name": "Операция 03",
+                "scripts": {
+                    "order_level": {
+                        "script": ""
+                    },
+                    "operation_level": {
+                        "script": ""
+                    },
+                    "resource_level": {
+                        "script": ""
+                    }
+                },
+                "description": "",
+                "cost": "0",
+                "compliance_rate": "600000",
+                "technical_maps": [],
+                "expects": [
+                    [
+                        "63aecfe1fe51cf495c2162e1"
+                    ]
+                ]
             },
             {
-                "condition": "minus",
-                "value": 100,
-                "path": "Paint.Paint",
-                "price": null
-            }
-        ],
-        "equipment": []
-    },
-    {
-        "_id": "62722d5453a18d6600067bfb",
-        "operation": {
-            "_id": "625c665cd286c349c9ea64ee",
-            "g_id": "6256b3af9be5936347adca37",
-            "name": "Painting and packing (for write-off)",
-            "cost": "10",
-            "technical_maps": [],
-            "sort": [],
-            "compliance_rate": "00:20:00"
-        },
-        "materials": [
+                "_id": "63aef59ffe51cf495c2162f0",
+                "g_id": "63e0b1d6c62b0f27175862e3",
+                "name": "Операция 12",
+                "description": "Операция 12",
+                "cost": "30",
+                "compliance_rate": "120000",
+                "technical_maps": [],
+                "resources": [
+                    {
+                        "name": "Resource 1",
+                        "status": true,
+                        "r_id": "63cedb7c4797d40542ce52e4",
+                        "type": "equipments",
+                        "conditions": [
+                            {
+                                "a_id": "629337cd81cbed3d19940c6f",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 1
+                            },
+                            {
+                                "a_id": "62c49c8027765d12f9c70350",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 1
+                            }
+                        ]
+                    }
+                ],
+                "scripts": {
+                    "order_level": {
+                        "script": ""
+                    },
+                    "operation_level": {
+                        "script": ""
+                    },
+                    "resource_level": {
+                        "script": ""
+                    }
+                },
+                "expects": [
+                    [
+                        "63aecfe1fe51cf495c2162e1"
+                    ]
+                ]
+            },
             {
-                "condition": "plus",
-                "value": 10,
-                "path": "Wheels ready for shipping.Ready wheel",
-                "price": null
+                "_id": "63aed7bafe51cf495c2162e2",
+                "g_id": "63e0b1d6c62b0f27175862e3",
+                "name": "Операция 11",
+                "description": "Операция 11",
+                "cost": 0,
+                "compliance_rate": "240000",
+                "resources": [
+                    {
+                        "name": "Resource 1",
+                        "status": true,
+                        "r_id": "63cc2f75f623c96470060d32",
+                        "type": "material",
+                        "conditions": [
+                            {
+                                "a_id": "6297834cd443c8021b14d59d",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 0
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Resource 2",
+                        "status": true,
+                        "r_id": "63d8efd8ebd51f68acfcf4e4",
+                        "type": "equipments",
+                        "conditions": [
+                            {
+                                "a_id": "62c49c8027765d12f9c70350",
+                                "r_index": 1,
+                                "take": 1,
+                                "return": 1
+                            },
+                            {
+                                "a_id": "63aef567fe51cf495c2162ef",
+                                "r_index": 1,
+                                "take": 1,
+                                "return": 1
+                            }
+                        ]
+                    }
+                ],
+                "technical_maps": [],
+                "scripts": {}
+                },
+                "expects": [
+                    [
+                        "63aecfe1fe51cf495c2162e1"
+                    ]
+                ]
+            },
+            {
+                "_id": "63aecfe1fe51cf495c2162e1",
+                "g_id": "63e0b1d6c62b0f27175862e3",
+                "name": "Операция 10",
+                "description": "Операция 10",
+                "cost": "20",
+                "compliance_rate": "180000",
+                "resources": [
+                    {
+                        "name": "Resource 1",
+                        "status": true,
+                        "r_id": "63cedb471efbbaaea5d4b949",
+                        "type": "equipments",
+                        "conditions": [
+                            {
+                                "a_id": "629336eb81cbed3d19940c6b",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 1
+                            },
+                            {
+                                "a_id": "63a9af67fe51cf495c21628d",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Resource 2",
+                        "status": true,
+                        "r_id": "63cedbac04fce7e1243cfb64",
+                        "type": "worker",
+                        "conditions": [
+                            {
+                                "a_id": "6293314681cbed3d19940af3",
+                                "r_index": 1,
+                                "take": 0.5,
+                                "return": 0.5
+                            }
+                        ]
+                    }
+                ],
+                "technical_maps": [],
+                "scripts": {
+                    "order_level": {
+                        "script": ""
+                    },
+                    "operation_level": {
+                        "script": ""
+                    },
+                    "resource_level": {
+                        "script": ""
+                    }
+                },
+                "expects": [
+                    []
+                ]
+            },
+            {
+                "_id": "63bfebbb91f6cc4f4c4f97b5",
+                "g_id": "63e0b1d6c62b0f27175862e3",
+                "name": "ОТК",
+                "description": "Отдел контроля качества",
+                "cost": "0",
+                "compliance_rate": "120000",
+                "resources": [
+                    {
+                        "name": "Resource 1",
+                        "status": true,
+                        "r_id": "63bfecae536213fe4a8619ac",
+                        "type": "worker",
+                        "conditions": [
+                            {
+                                "a_id": "62932f1881cbed3d19940aef",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 1
+                            },
+                            {
+                                "a_id": "62c45e5509f2bd0ac40dd7ed",
+                                "r_index": 0,
+                                "take": 1,
+                                "return": 1
+                            }
+                        ]
+                    }
+                ],
+                "technical_maps": [],
+                "scripts": {
+                    "order_level": {
+                        "script": ""
+                    },
+                    "operation_level": {
+                        "script": ""
+                    },
+                    "resource_level": {
+                        "script": ""
+                    }
+                },
+                "expects": [
+                    [
+                        "63d269761ba4501b0cf39b84"
+                    ],
+                    [
+                        "63aed7bafe51cf495c2162e2",
+                        "63aef59ffe51cf495c2162f0"
+                    ]
+                ]
             }
-        ],
-        "equipment": []
+        ]
     }
 ]
 ```
 
 Параметры:<br>
-**_id*** - Идентификатор заказа<br>
+**_id*** - Массив заказов<br>
+
+Примеры условий "expects":<br>
+"expects":[["63e0de7cbe1a8520512b4128"]] - текущая операция ждёт пока завершиться операция "63e0de7cbe1a8520512b4128"<br>
+"expects":[["63e0de7cbe1a8520512b4128"],["63e0de8abe1a8520512b412f"]] - текущая операция ждёт пока завершиться операция "63e0de7cbe1a8520512b4128" или "63e0de8abe1a8520512b412f"<br>
+"expects":[["63e0de7cbe1a8520512b4128", "63e0dea0be1a8520512b413f"],["63e0de8abe1a8520512b412f"]] - текущая операция ждёт пока завершаться операции ("63e0de7cbe1a8520512b4128" и "63e0dea0be1a8520512b413f") или операция "63e0de8abe1a8520512b412f"<br>
+"expects":[["63e0de7cbe1a8520512b4128", "63e0dea0be1a8520512b413f"],["63e0de8abe1a8520512b412f,63e0dec9be1a8520512b4153"]] - текущая операция ждёт пока завершаться операции ("63e0de7cbe1a8520512b4128" и "63e0dea0be1a8520512b413f") или операции ("63e0de8abe1a8520512b412f" и "63e0dec9be1a8520512b4153")
 
 <br>
