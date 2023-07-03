@@ -301,6 +301,17 @@ worker_sys.js
     "next_operation_id": "5cbb8d969279efc1c8150a8f",
     "current_operation_id": "5cbb844a9279efc1c8150a89",
     "relation_id": "5dbacff8ff4d912c565ebce4"
+    "completely": true,
+    "function": 
+    [
+        {
+            "order_id": "63f367e12fe4265f8989ad41",
+            "current_operation_id": "63e247c37ac075d6739afc44",
+            "condition": "minus",
+            "value": 1,
+            "path": "Стальной лист.value.amount"
+        }
+    ]
 }
 ```
 
@@ -310,7 +321,8 @@ worker_sys.js
 **next_operation_id*** - Идентификатор следующей операции ("so_id" из описании связи)<br>
 **current_operation_id*** - Идентификатор текущей операции ("o_id")<br>
 **relation_id*** - Идентификатор связи по которой перходим<br>
-Для примера: http://prntscr.com/nu1yob<br>
+**completely*** - Частичное или полное выполнение операции (true или false)<br>
+**function*** - Выполняемые функции (например списание материалов)<br>
 
 Ответ:<br> коды состояний 204 или 404.
 

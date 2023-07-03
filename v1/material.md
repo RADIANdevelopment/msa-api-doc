@@ -213,3 +213,145 @@ material.js
 **c_id*** - Идентификатор цвета<br>
 
 Ответ:<br> коды состояний 204 или 404.
+
+<br>
+
+### Получение BOM
+
+Для получения материала необходимо отправить **`GET`** запрос на **`/bom_new/:m_id/:filter_date/:grade`**<br>
+Описание: Для верхнего урованя (конечная продукция) grade передавать не нужно, на нижние уровни передаём grade верхнего уровня<br>
+
+Параметры:<br>
+**m_id*** - Идентификатор материала<br>
+**filter_date*** - Текущая дата<br>
+**grade*** - Комплектация<br>
+
+Пример ответа:<br>
+```
+[
+    {
+        "_id": "640237adff8d6b0e26819dfc",
+        "operation": "Сборка бампера",
+        "compliance_rate": "2400000",
+        "res_m": [
+            {
+                "name": "Resource 13",
+                "status": true,
+                "r_id": "64023a4b935d7a8d7e4a9ff0",
+                "type": "material",
+                "conditions": [
+                    {
+                        "a_id": "6402fcaeff8d6b0e2681a626",
+                        "r_index": 12,
+                        "take": 0,
+                        "return": 1
+                    }
+                ],
+                "change": false,
+                "arsenal": {
+                    "a_id": "6402fcaeff8d6b0e2681a626",
+                    "r_index": 12,
+                    "take": 0,
+                    "return": 1,
+                    "name": "Бампер модель Б1",
+                    "amount": 0
+                }
+            },
+            {
+                "name": "Resource 7",
+                "status": true,
+                "r_id": "640238c6723dd04214260b33",
+                "type": "material",
+                "conditions": [
+                    {
+                        "a_id": "640236b6ff8d6b0e26819df6",
+                        "r_index": 6,
+                        "take": 8,
+                        "return": 0
+                    }
+                ],
+                "change": false,
+                "arsenal": {
+                    "a_id": "640236b6ff8d6b0e26819df6",
+                    "r_index": 6,
+                    "take": 8,
+                    "return": 0,
+                    "name": "Болт М16х 1,5-6gх35",
+                    "amount": 1000
+                }
+            },
+            {
+                "name": "Resource 11",
+                "status": true,
+                "r_id": "6402394ccbadd761aac04244",
+                "type": "material",
+                "conditions": [
+                    {
+                        "a_id": "64023745ff8d6b0e26819dfa",
+                        "r_index": 10,
+                        "take": 8,
+                        "return": 0
+                    }
+                ],
+                "change": false,
+                "arsenal": {
+                    "a_id": "64023745ff8d6b0e26819dfa",
+                    "r_index": 10,
+                    "take": 8,
+                    "return": 0,
+                    "name": "Шайба пружинная 16",
+                    "amount": 900
+                }
+            }
+        ],
+        "res_w": [
+            {
+                "name": "Resource 1",
+                "status": true,
+                "r_id": "64023800d4027812d445e2ca",
+                "type": "worker",
+                "conditions": [
+                    {
+                        "a_id": "640073c253d5a7d95a8f86d4",
+                        "r_index": 0,
+                        "take": 1,
+                        "return": 1
+                    },
+                    {
+                        "a_id": "64058fdfd6ef95a980f29b56",
+                        "r_index": 0,
+                        "take": 1,
+                        "return": 1
+                    },
+                    {
+                        "a_id": "640eda8c34903b7cc212cca3",
+                        "r_index": 0,
+                        "take": 1,
+                        "return": 1
+                    }
+                ],
+                "change": false,
+                "arsenal": {
+                    "a_id": "640073c253d5a7d95a8f86d4",
+                    "r_index": 0,
+                    "take": 1,
+                    "return": 1,
+                    "name": "Попов Михаил",
+                    "amount": 1
+                }
+            }
+        ],
+        "res_e": [],
+        "res_d": [],
+        "position": {
+            "r_id": "642b0995507acba2fa401a48",
+            "a_id": "64058bb0d6ef95a980f29b34",
+            "take": 8,
+            "return": 0
+        }
+    }
+]
+```
+
+Параметры:<br>
+**id*** - Идентификатор материала<br>
