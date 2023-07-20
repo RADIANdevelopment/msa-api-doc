@@ -323,7 +323,7 @@ material.js
                 "name": "Лист металлический 6 мм сталь 45",
                 "measure": "шт.",
                 "description": "",
-                "amount": 95.59999999999997,
+                "amount": 95.6,
                 "operation": [],
                 "technical_maps": [],
                 "take": 1,
@@ -335,7 +335,7 @@ material.js
                 "name": "Лист металлический 8 мм сталь 45",
                 "measure": "шт.",
                 "description": "",
-                "amount": 96.39999999999996,
+                "amount": 96.4,
                 "operation": [],
                 "take": 51,
                 "return": 0
@@ -346,7 +346,7 @@ material.js
                 "name": "Лист металлический 10 мм сталь 45",
                 "measure": "шт",
                 "description": "",
-                "amount": "103.19999999999997",
+                "amount": "103.2",
                 "operation": [],
                 "take": 1,
                 "return": 0
