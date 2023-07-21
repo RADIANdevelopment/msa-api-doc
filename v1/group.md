@@ -3,7 +3,7 @@ operation.js
 
 [Главная](README.md)  /  [Manufacturing Execution System](mes.md)
 
-### Получение групп
+###  Получение групп
 
 Для получения групп необходимо отправить **`GET`** запрос на **`/api/group/:_id`**<br>
 
